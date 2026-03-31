@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu | Miru Seafood — League City, TX</title>
+  <meta name="description" content="Explore Miru Seafood's full dinner menu, including appetizers, raw bar selections, cold dishes, entrees, rice and noodle dishes, and more. Located in League City, TX.">
+  <link rel="canonical" href="https://miruseafood.com/menu/">
+  <meta property="og:title" content="Menu | Miru Seafood">
+  <meta property="og:description" content="Explore Miru Seafood's full menu — premium seafood, Japanese-inspired dishes, and coastal American cuisine in League City, TX.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://miruseafood.com/menu/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+
+  <style>
+    /* ─── PAGE-LEVEL TOKENS ────────────────────────────────── */
+    :root {
+      --gold: #c9a96e;
+      --gold-light: #e8c98a;
+      --gold-dim: rgba(201, 169, 110, 0.12);
+      --surface: #111620;
+      --surface-raised: #181e2a;
+      --divider: rgba(255,255,255,0.07);
+      --text-dim: #6b7685;
+    }
+
+    /* ─── GLOBAL RESETS (page-local) ───────────────────────── */
+    html { scroll-behavior: smooth; }
+
+    /* ─── HEADER (override height for menu page) ───────────── */
+    .main-header { padding: 0; }
+    .nav-container { padding: 1.2rem 2.5rem; }
+
+    /* ─── MENU HERO ─────────────────────────────────────────── */
+    .menu-hero {
+      min-height: 38vh;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 5rem 2rem 4rem;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 100%, rgba(201,169,110,0.08) 0%, transparent 70%),
+        linear-gradient(180deg, transparent 0%, rgba(10,14,20,0.6) 100%);
+      text-align: center;
+      border-bottom: 1px solid var(--divider);
+    }
+
+    .menu-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3.2rem, 6vw, 5.5rem);
+      font-weight: 700;
+      letter-spacing: -1px;
+      line-height: 1;
+      color: #f0f3f6;
+      margin-bottom: 1rem;
+    }
+
+    .menu-hero-sub {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: var(--text-secondary);
+      max-width: 640px;
+      margin: 0 auto;
+      font-weight: 400;
+      line-height: 1.7;
+    }
+
+    /* ─── ANCHOR NAV ─────────────────────────────────────────── */
+    .section-nav-wrapper {
+      position: sticky;
+      top: 70px;
+      z-index: 900;
+      background: rgba(10, 14, 20, 0.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--divider);
+    }
+
+    .section-nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      gap: 0;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+
+    .section-nav::-webkit-scrollbar { display: none; }
+
+    .section-nav a {
+      flex-shrink: 0;
+      padding: 1rem 1.4rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      border-bottom: 2px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+      white-space: nowrap;
+    }
+
+    .section-nav a:hover,
+    .section-nav a.is-active {
+      color: var(--gold-light);
+      border-bottom-color: var(--gold);
+    }
+
+    /* ─── MAIN CONTENT WRAPPER ──────────────────────────────── */
+    .menu-body {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 2rem 6rem;
+    }
+
+    /* ─── MENU SECTION ──────────────────────────────────────── */
+    .menu-section {
+      padding-top: 5rem;
+    }
+
+    .menu-section-header {
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.2rem;
+      border-bottom: 1px solid var(--divider);
+      display: flex;
+      align-items: baseline;
+      gap: 1.5rem;
+    }
+
+    .menu-section-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+      font-weight: 700;
+      color: #f0f3f6;
+      letter-spacing: -0.5px;
+    }
+
+    .section-tag {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid rgba(201,169,110,0.35);
+      padding: 0.2em 0.7em;
+      border-radius: 2px;
+    }
+
+    /* ─── MENU ITEMS GRID ───────────────────────────────────── */
+    .menu-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+
+    .menu-item {
+      display: grid;
+      grid-template-columns: 1fr;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid var(--divider);
+      transition: background 0.2s;
+      border-radius: 0;
+    }
+
+    .menu-item:last-child {
+      border-bottom: none;
+    }
+
+    .menu-item:hover {
+      background: linear-gradient(90deg, var(--gold-dim), transparent);
+      padding-left: 1rem;
+      margin-left: -1rem;
+      margin-right: -1rem;
+      padding-right: 1rem;
+    }
+
+    .item-name {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #e8ecf0;
+      letter-spacing: 0.01em;
+      margin-bottom: 0.3rem;
+    }
+
+    .item-desc {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+      font-weight: 400;
+    }
+
+    /* Sides — simpler single-column list */
+    .sides-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 0;
+    }
+
+    .side-item {
+      padding: 0.85rem 0;
+      border-bottom: 1px solid var(--divider);
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #c8d0d8;
+    }
+
+    /* ─── CONTACT / HOURS SECTION ───────────────────────────── */
+    .contact-section {
+      margin-top: 6rem;
+      padding-top: 4rem;
+      border-top: 1px solid var(--divider);
+    }
+
+    .contact-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+      color: #f0f3f6;
+      margin-bottom: 2.5rem;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .contact-block h3 {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+
+    .contact-block p,
+    .contact-block address {
+      font-style: normal;
+      font-size: 0.97rem;
+      color: var(--text-secondary);
+      line-height: 1.75;
+    }
+
+    .contact-block a {
+      color: #b8c4cc;
+      border-bottom: 1px solid rgba(184,196,204,0.25);
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .contact-block a:hover {
+      color: var(--gold-light);
+      border-bottom-color: var(--gold);
+    }
+
+    .hours-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .hours-table tr td {
+      padding: 0.4rem 0;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      vertical-align: top;
+    }
+
+    .hours-table tr td:first-child {
+      font-weight: 600;
+      color: #c8d0d8;
+      padding-right: 1.5rem;
+      white-space: nowrap;
+    }
+
+    /* ─── PAGE FOOTER ────────────────────────────────────────── */
+    .page-footer {
+      text-align: center;
+      padding: 3rem 2rem;
+      background: rgba(0,0,0,0.3);
+      border-top: 1px solid var(--divider);
+      margin-top: 5rem;
+    }
+
+    .page-footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .page-footer-logo span {
+      background: linear-gradient(135deg, #c9a96e, #e8c98a);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .page-footer nav {
+      display: flex;
+      gap: 2.5rem;
+      justify-content: center;
+      margin: 1.2rem 0;
+      flex-wrap: wrap;
+    }
+
+    .page-footer nav a {
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+    }
+
+    .page-footer nav a:hover { color: var(--gold-light); }
+
+    .page-footer small {
+      display: block;
+      margin-top: 1.5rem;
+      font-size: 0.8rem;
+      color: var(--text-dim);
+    }
+
+    /* ─── MOBILE ─────────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .menu-hero { min-height: 28vh; padding: 4rem 1.5rem 3rem; }
+      .menu-body { padding: 0 1.25rem 5rem; }
+      .section-nav { padding: 0 1rem; }
+      .contact-grid { grid-template-columns: 1fr 1fr; }
+      .sides-list { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 480px) {
+      .contact-grid { grid-template-columns: 1fr; }
+      .sides-list { grid-template-columns: 1fr; }
+      .menu-section-header { flex-direction: column; gap: 0.5rem; }
+    }
+  </style>
+</head>
+
+<body class="dark-theme">
+
+  <!-- ── GLOBAL HEADER ────────────────────────────────────── -->
+  <header class="main-header">
+    <nav class="nav-container" aria-label="Site Navigation">
+      <a href="../" class="logo" aria-label="Miru Seafood Home">Miru<span>Seafood</span></a>
+      <ul class="nav-links" role="list">
+        <li><a href="../">Home</a></li>
+        <li><a href="../menu/" class="active" aria-current="page">Menu</a></li>
+        <li><a href="../photo-gallery/">Gallery</a></li>
+        <li><a href="../contact/">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ── HERO ─────────────────────────────────────────────── -->
+  <section class="menu-hero">
+    <div>
+      <h1>Menu</h1>
+      <p class="menu-hero-sub">
+        Explore Miru Seafood's full dinner menu — appetizers, raw bar selections,
+        fresh cold dishes, elevated entrees, rice &amp; noodle specialties, and more.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── ANCHOR NAVIGATION ────────────────────────────────── -->
+  <div class="section-nav-wrapper" role="navigation" aria-label="Menu Sections">
+    <nav class="section-nav" id="menu-section-nav">
+      <a href="#appetizers"  id="nav-appetizers">Appetizers</a>
+      <a href="#cold"        id="nav-cold">Cold</a>
+      <a href="#soup-salad"  id="nav-soup-salad">Soup &amp; Salad</a>
+      <a href="#entrees"     id="nav-entrees">Entrees</a>
+      <a href="#rice-noodle" id="nav-rice-noodle">Rice &amp; Noodle</a>
+      <a href="#land"        id="nav-land">Land</a>
+      <a href="#sides"       id="nav-sides">Sides</a>
+      <a href="#contact-hours" id="nav-contact-hours">Hours &amp; Contact</a>
+    </nav>
+  </div>
+
+  <!-- ── MENU BODY ─────────────────────────────────────────── -->
+  <main class="menu-body" id="main-content">
+
+    <!-- APPETIZERS -->
+    <section class="menu-section" id="appetizers" aria-labelledby="heading-appetizers">
+      <div class="menu-section-header">
+        <h2 id="heading-appetizers">Appetizers</h2>
+        <span class="section-tag">Starters</span>
+      </div>
+      <ul class="menu-grid" role="list">
+        <li class="menu-item">
+          <span class="item-name">Edamame</span>
+          <span class="item-desc">Steamed Soybeans w/ Sea Salt, Spicy +1</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">Spring Rolls</span>
+          <span class="item-desc">Shrimp, Chicken, Vegetables</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">Wagyu Gyoza</span>
+          <span class="item-desc">A5 Short Rib, Shrimp</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">Garlic Pepper Shrimp</span>
+          <span class="item-desc">Lobster Butter, Crispy Garlic &amp; Shishito</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">Lobster Cones</span>
+          <span class="item-desc">Maine Lobster, Avocado, Mango</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">Sake Mussels</span>
+          <span class="item-desc">½ Pound P.E.I., Sake, Garlic Shallot, Basil</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">2 Pacific Oysters</span>
+          <span class="item-desc">Parmesan Garlic Panko</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">Gulf Grouper</span>
+          <span class="item-desc">Flash Fried, Mango, Tomato, Basil</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">Seared Hokkaido Scallops</span>
+          <span class="item-desc">King Mushroom, Black Garlic Soy</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">Shitake Short Rib</span>
+          <span class="item-desc">Black Angus, Sake, Mirin, Garlic Soy, Mushrooms</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">Basil Fried Chicken</span>
+          <span class="item-desc">Love Street Beer Batter, Garlic, Shishito, Basil</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">Shrimp Lollipop</span>
+          <span class="item-desc">Lobster Butter, Blue Crab</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">Calamari</span>
+          <span class="item-desc">Tempura Rice Flour</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">Red Shrimp &amp; Toast</span>
+          <span class="item-desc">Dry Sherry, Olive Oil, Garlic, Smoked Paprika, Chorizo</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">Rock Shrimp</span>
+          <span class="item-desc">Spicy Cream Aioli</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">Cod Cheeks</span>
+          <span class="item-desc">Icelandic Cod, Black Garlic Soy, Sake, Ginger, Shallots, Mushrooms</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">Baked Half-Shell Scallop</span>
+          <span class="item-desc">King Mushroom, Spicy Aioli</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">Crab Cake</span>
+          <span class="item-desc">Jumbo Lump Blue Crab, Lobster Butter, Capers</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- COLD -->
+    <section class="menu-section" id="cold" aria-labelledby="heading-cold">
+      <div class="menu-section-header">
+        <h2 id="heading-cold">Cold</h2>
+        <span class="section-tag">Raw Bar</span>
+      </div>
+      <ul class="menu-grid" role="list">
+        <li class="menu-item">
+          <span class="item-name">Tuna Crispy Rice</span>
+          <span class="item-desc">Crispy Rice Squares, Yellowfin Tuna, Eel Sauce, Thai-Chili, Yuzu Tartar</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">Snapper Crudo</span>
+          <span class="item-desc">Japanese Red Snapper, Olive Oil, Sea Salt, Lemon, Crispy Chili Garlic</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">Ahi Tuna Crisps</span>
+          <span class="item-desc">Spicy Tuna, Masago, Basil, Scallions, Fried Nori</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">Black Garlic Snapper Carpaccio</span>
+          <span class="item-desc">Lobster Butter, Black Garlic Soy, Crispy Shishito</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">CB Seaweed Crisps</span>
+          <span class="item-desc">Miso Chilean Sea Bass, Spicy Aioli, Basil, Scallions, Masago, Avocado, Seaweed Chips</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">Live Oysters</span>
+          <span class="item-desc">Prince Edward Island</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">Tuna Chilly Chile</span>
+          <span class="item-desc">Spiced Tuna, Mango, Onion, Avocado, Tomato, Basil, Puffed Rice</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">Oyster Shooters</span>
+          <span class="item-desc">Live Oyster, Sake Moto, Scallions</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- SOUP & SALAD -->
+    <section class="menu-section" id="soup-salad" aria-labelledby="heading-soup-salad">
+      <div class="menu-section-header">
+        <h2 id="heading-soup-salad">Soup &amp; Salad</h2>
+      </div>
+      <ul class="menu-grid" role="list">
+        <li class="menu-item">
+          <span class="item-name">Lobster Pumpkin Soup</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">House Ginger Salad</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">Peppered Tuna Salad</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">Caesar Salad</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ENTREES -->
+    <section class="menu-section" id="entrees" aria-labelledby="heading-entrees">
+      <div class="menu-section-header">
+        <h2 id="heading-entrees">Entrees</h2>
+        <span class="section-tag">Mains</span>
+      </div>
+      <ul class="menu-grid" role="list">
+        <li class="menu-item">
+          <span class="item-name">Scottish Salmon</span>
+          <span class="item-desc">Ginger, Lemon Lobster Butter, Shrimp, Blue Crab, Sauteed Asparagus</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">Blackened Tuna</span>
+          <span class="item-desc">Seafood Noodles, Lobster Lemon Butter, Parmesan Broccolini</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">Seafood Pot</span>
+          <span class="item-desc">Red Curry, Miso Icelandic Cod, Cherry Stone Clams, Black Mussels, Shrimp, Garlic Bread</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">Chilean Sea Bass</span>
+          <span class="item-desc">Peppercorn Chile, Seafood Noodles, Seared Scallops, Shrimp, Blue Crab</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">Rainbow Trout</span>
+          <span class="item-desc">Blackened, Lemon Butter, Blue Crab, Sauteed Spinach</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">Fish &amp; Chips</span>
+          <span class="item-desc">Miso Icelandic Cod, Yuzu Tartar, Fries</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">Alaskan Halibut</span>
+          <span class="item-desc">Yuzu Miso, Lobster Butter, Black Garlic Soy, Shrimp, Scallops, Parmesan Broccolini</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">Curry Red Snapper</span>
+          <span class="item-desc">Fried Gulf Snapper, Red Curry, Scallops, Shrimp, Emperor Mushrooms</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">Red Pepper Snapper</span>
+          <span class="item-desc">Blackened, Peppercorn Chili, Shrimp, Shallots, Chorizo, Emperor Mushrooms</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">Fried Seafood Platter</span>
+          <span class="item-desc">Miso Cod, Shrimp, Calamari, Fries</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">Crusted Bronzino</span>
+          <span class="item-desc">Seafood Stuffing, Shrimp, Asparagus, Capers, Lemon Butter, Modern Hollandaise</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">Redfish</span>
+          <span class="item-desc">Lobster Brown Butter, Crab, Shrimp, Brussel Sprouts, Shallots</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- RICE & NOODLE -->
+    <section class="menu-section" id="rice-noodle" aria-labelledby="heading-rice-noodle">
+      <div class="menu-section-header">
+        <h2 id="heading-rice-noodle">Rice &amp; Noodle</h2>
+      </div>
+      <ul class="menu-grid" role="list">
+        <li class="menu-item">
+          <span class="item-name">Seafood Pasta</span>
+          <span class="item-desc">Cherry Stone Clams, Mussels, Rice Noodle, Shrimp, Blue Crab, Basil</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">Seafood Fried Rice</span>
+          <span class="item-desc">Short Grain Rice, Lobster Butter, Shrimp, Blue Crab</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- LAND -->
+    <section class="menu-section" id="land" aria-labelledby="heading-land">
+      <div class="menu-section-header">
+        <h2 id="heading-land">Land</h2>
+        <span class="section-tag">From the Kitchen</span>
+      </div>
+      <ul class="menu-grid" role="list">
+        <li class="menu-item">
+          <span class="item-name">Filet Mignon</span>
+          <span class="item-desc">Parm Broccolini, Fries</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">Chicken Teriyaki</span>
+          <span class="item-desc">Avocado, Cherry Tomato</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">Pork Chops</span>
+          <span class="item-desc">Sauteed Asparagus</span>
+        </li>
+        <li class="menu-item">
+          <span class="item-name">Chicken Katsu</span>
+          <span class="item-desc">Seaweed Panko, Fries</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- SIDES -->
+    <section class="menu-section" id="sides" aria-labelledby="heading-sides">
+      <div class="menu-section-header">
+        <h2 id="heading-sides">Sides</h2>
+      </div>
+      <ul class="sides-list" role="list">
+        <li class="side-item">Steamed White Rice</li>
+        <li class="side-item">Fried Rice</li>
+        <li class="side-item">Seafood Noodles</li>
+        <li class="side-item">Garlic Bread</li>
+        <li class="side-item">Sweet Potato Fries</li>
+        <li class="side-item">Peppercorn Brussels Sprouts</li>
+        <li class="side-item">Sauteed Emperor Mushrooms</li>
+        <li class="side-item">Sauteed Spinach</li>
+        <li class="side-item">Parmesan Broccolini</li>
+        <li class="side-item">Sauteed Asparagus</li>
+      </ul>
+    </section>
+
+    <!-- CONTACT & HOURS -->
+    <section class="contact-section" id="contact-hours" aria-labelledby="heading-contact">
+      <h2 id="heading-contact">Hours &amp; Contact</h2>
+      <div class="contact-grid">
+
+        <div class="contact-block">
+          <h3>Location</h3>
+          <address>
+            2490 Gulf Fwy S<br>
+            League City, TX 77573
+          </address>
+        </div>
+
+        <div class="contact-block">
+          <h3>Call</h3>
+          <p><a href="tel:+18329057888">(832) 905-7888</a></p>
+        </div>
+
+        <div class="contact-block">
+          <h3>Text</h3>
+          <p><a href="tel:+18329057878">(832) 905-7878</a></p>
+        </div>
+
+        <div class="contact-block">
+          <h3>Hours</h3>
+          <table class="hours-table" aria-label="Restaurant Hours">
+            <tbody>
+              <tr>
+                <td>Mon – Thu</td>
+                <td>4:00 – 9:30 pm</td>
+              </tr>
+              <tr>
+                <td>Friday</td>
+                <td>4:00 – 10:00 pm</td>
+              </tr>
+              <tr>
+                <td>Saturday</td>
+                <td>12:00 – 10:00 pm</td>
+              </tr>
+              <tr>
+                <td>Sunday</td>
+                <td>12:00 – 9:00 pm</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── PAGE FOOTER ────────────────────────────────────────── -->
+  <footer class="page-footer" role="contentinfo">
+    <div class="page-footer-logo">Miru<span>Seafood</span></div>
+    <nav aria-label="Footer Navigation">
+      <a href="../">Home</a>
+      <a href="../menu/">Menu</a>
+      <a href="../photo-gallery/">Gallery</a>
+      <a href="../contact/">Contact</a>
+    </nav>
+    <small>&copy; 2026 Miru Seafood &mdash; League City, TX</small>
+  </footer>
+
+  <!-- ── ANCHOR NAV HIGHLIGHT SCRIPT ─────────────────────────── -->
+  <script>
+    (function () {
+      const sections = ['appetizers','cold','soup-salad','entrees','rice-noodle','land','sides','contact-hours'];
+      const navLinks = {};
+      sections.forEach(id => {
+        navLinks[id] = document.getElementById('nav-' + id);
+      });
+
+      function setActive() {
+        let current = sections[0];
+        sections.forEach(id => {
+          const el = document.getElementById(id);
+          if (!el) return;
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= 160) current = id;
+        });
+        Object.values(navLinks).forEach(a => a && a.classList.remove('is-active'));
+        if (navLinks[current]) navLinks[current].classList.add('is-active');
+      }
+
+      window.addEventListener('scroll', setActive, { passive: true });
+      setActive();
+    })();
+  </script>
+
+</body>
+</html>

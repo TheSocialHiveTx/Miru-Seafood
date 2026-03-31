@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact &amp; Hours | Miru Seafood — League City, TX</title>
+  <meta name="description" content="Find Miru Seafood at 2490 Gulf Fwy S, League City, TX. Call (832) 905-7888 or text (832) 905-7878 for reservations and inquiries.">
+  <link rel="canonical" href="https://miruseafood.com/contact/">
+  <meta property="og:title" content="Contact | Miru Seafood">
+  <meta property="og:description" content="Miru Seafood — 2490 Gulf Fwy S, League City, TX 77573. Call or text for reservations.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://miruseafood.com/contact/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+
+  <style>
+    :root {
+      --gold: #c9a96e;
+      --gold-light: #e8c98a;
+      --gold-dim: rgba(201,169,110,0.10);
+      --divider: rgba(255,255,255,0.07);
+      --text-dim: #6b7685;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    /* ── HERO ──────────────────────────────────────── */
+    .contact-hero {
+      min-height: 38vh;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 5rem 2rem 4rem;
+      text-align: center;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 100%, rgba(201,169,110,0.07) 0%, transparent 70%);
+      border-bottom: 1px solid var(--divider);
+    }
+
+    .contact-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 6vw, 5rem);
+      font-weight: 700;
+      color: #f0f3f6;
+      line-height: 1.05;
+      margin-bottom: 0.75rem;
+    }
+
+    .contact-hero h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .contact-hero p {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+    }
+
+    /* ── CONTACT GRID ──────────────────────────────── */
+    .contact-body {
+      max-width: 1000px;
+      margin: 5rem auto;
+      padding: 0 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .contact-block {
+      background: #151a22;
+      border: 1px solid var(--divider);
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      transition: all 0.3s ease;
+    }
+
+    .contact-block:hover {
+      border-color: rgba(201,169,110,0.35);
+      transform: translateY(-5px);
+    }
+
+    .contact-block-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .contact-block h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: #e8ecf0;
+      margin-bottom: 0.75rem;
+    }
+
+    .contact-block address,
+    .contact-block p {
+      font-style: normal;
+      font-size: 1rem;
+      color: var(--text-secondary);
+      line-height: 1.75;
+    }
+
+    .contact-block a {
+      color: var(--gold-light);
+      border-bottom: 1px solid rgba(232,201,138,0.3);
+      transition: border-color 0.2s;
+    }
+
+    .contact-block a:hover { border-bottom-color: var(--gold); }
+
+    /* ── HOURS ─────────────────────────────────────── */
+    .hours-block {
+      grid-column: 1 / -1;
+      background: #151a22;
+      border: 1px solid var(--divider);
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+    }
+
+    .hours-block:hover {
+      border-color: rgba(201,169,110,0.35);
+    }
+
+    .hours-block h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: #e8ecf0;
+      margin-bottom: 1.25rem;
+    }
+
+    .hours-row-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem 3rem;
+    }
+
+    .hours-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 0.4rem 0;
+      border-bottom: 1px solid var(--divider);
+      font-size: 0.97rem;
+    }
+
+    .hours-row:last-child { border-bottom: none; }
+    .hours-day { font-weight: 600; color: #c8d0d8; }
+    .hours-time { color: var(--text-secondary); }
+
+    /* ── MAP NOTE ──────────────────────────────────── */
+    .map-note {
+      max-width: 1000px;
+      margin: 0 auto 5rem;
+      padding: 0 2rem;
+      text-align: center;
+    }
+
+    .map-note p {
+      font-size: 0.9rem;
+      color: var(--text-dim);
+    }
+
+    .map-note a {
+      color: var(--gold-light);
+      border-bottom: 1px solid rgba(232,201,138,0.3);
+    }
+
+    /* ── FOOTER ────────────────────────────────────── */
+    .site-footer {
+      background: #0d1119;
+      border-top: 1px solid var(--divider);
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .site-footer .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+
+    .site-footer .logo span {
+      background: linear-gradient(135deg, #c9a96e, #e8c98a);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .footer-nav {
+      display: flex;
+      gap: 2.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 1rem 0 1.5rem;
+    }
+
+    .footer-nav a {
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      transition: color 0.2s;
+    }
+
+    .footer-nav a:hover { color: var(--gold-light); }
+    .footer-copy { font-size: 0.8rem; color: #3a4450; }
+
+    @media (max-width: 600px) {
+      .contact-body { grid-template-columns: 1fr; }
+      .hours-block { grid-column: 1; }
+    }
+  </style>
+</head>
+
+<body class="dark-theme">
+
+  <!-- HEADER -->
+  <header class="main-header">
+    <nav class="nav-container" aria-label="Site Navigation">
+      <a href="/" class="logo" aria-label="Miru Seafood Home">Miru<span>Seafood</span></a>
+      <ul class="nav-links" role="list">
+        <li><a href="../">Home</a></li>
+        <li><a href="../menu/">Menu</a></li>
+        <li><a href="../photo-gallery/">Gallery</a></li>
+        <li><a href="../contact/" class="active" aria-current="page">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="contact-hero" aria-labelledby="contact-heading">
+      <div>
+        <h1 id="contact-heading">Hours &amp; <em>Contact</em></h1>
+        <p>Reservations, inquiries, and private events.</p>
+      </div>
+    </section>
+
+    <!-- CONTACT GRID -->
+    <div class="contact-body">
+
+      <div class="contact-block">
+        <div class="contact-block-label">Location</div>
+        <h2>Find Us</h2>
+        <address>
+          2490 Gulf Fwy S<br>
+          League City, TX 77573
+        </address>
+      </div>
+
+      <div class="contact-block">
+        <div class="contact-block-label">Reservations</div>
+        <h2>Call Us</h2>
+        <p><a href="tel:+18329057888">(832) 905-7888</a></p>
+      </div>
+
+      <div class="contact-block">
+        <div class="contact-block-label">Quick Inquiry</div>
+        <h2>Text Us</h2>
+        <p><a href="sms:+18329057878">(832) 905-7878</a></p>
+      </div>
+
+      <div class="hours-block">
+        <h2>Restaurant Hours</h2>
+        <div class="hours-row-grid">
+          <div class="hours-row">
+            <span class="hours-day">Monday – Thursday</span>
+            <span class="hours-time">4:00 – 9:30 pm</span>
+          </div>
+          <div class="hours-row">
+            <span class="hours-day">Friday</span>
+            <span class="hours-time">4:00 – 10:00 pm</span>
+          </div>
+          <div class="hours-row">
+            <span class="hours-day">Saturday</span>
+            <span class="hours-time">12:00 – 10:00 pm</span>
+          </div>
+          <div class="hours-row">
+            <span class="hours-day">Sunday</span>
+            <span class="hours-time">12:00 – 9:00 pm</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="map-note">
+      <p>
+        Located on Gulf Freeway South in League City.
+        <a href="https://maps.google.com/?q=2490+Gulf+Fwy+S+League+City+TX+77573" target="_blank" rel="noopener noreferrer">Get directions on Google Maps →</a>
+      </p>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <a href="../" class="logo" aria-label="Miru Seafood">Miru<span>Seafood</span></a>
+    <nav class="footer-nav" aria-label="Footer Navigation">
+      <a href="../menu/">Menu</a>
+      <a href="../photo-gallery/">Gallery</a>
+      <a href="../contact/">Contact</a>
+    </nav>
+    <p class="footer-copy">&copy; 2026 Miru Seafood. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

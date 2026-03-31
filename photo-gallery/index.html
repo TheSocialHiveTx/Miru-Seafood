@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photo Gallery | Miru Seafood — League City, TX</title>
+  <meta name="description" content="Browse photos of Miru Seafood's premium dishes, fresh oysters, signature boils, and coastal dining atmosphere in League City, TX.">
+  <link rel="canonical" href="https://miruseafood.com/photo-gallery/">
+  <meta property="og:title" content="Photo Gallery | Miru Seafood">
+  <meta property="og:description" content="A visual look at Miru Seafood's premium coastal dishes and dining experience in League City, TX.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://miruseafood.com/photo-gallery/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+
+  <style>
+    :root {
+      --gold: #c9a96e;
+      --gold-light: #e8c98a;
+      --gold-dim: rgba(201,169,110,0.10);
+      --divider: rgba(255,255,255,0.07);
+      --text-dim: #6b7685;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    /* ── HERO ──────────────────────────────────────── */
+    .gallery-hero {
+      min-height: 38vh;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 5rem 2rem 4rem;
+      text-align: center;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 100%, rgba(201,169,110,0.07) 0%, transparent 70%);
+      border-bottom: 1px solid var(--divider);
+    }
+
+    .gallery-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 6vw, 5rem);
+      font-weight: 700;
+      color: #f0f3f6;
+      line-height: 1.05;
+      margin-bottom: 0.75rem;
+    }
+
+    .gallery-hero h1 em { font-style: italic; color: var(--gold); }
+    .gallery-hero p { font-size: 1.1rem; color: var(--text-secondary); }
+
+    /* ── GALLERY INTRO ─────────────────────────────── */
+    .gallery-intro {
+      max-width: 680px;
+      margin: 4rem auto 3rem;
+      padding: 0 2rem;
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    /* ── MASONRY GRID ──────────────────────────────── */
+    .gallery-body {
+      max-width: 1100px;
+      margin: 0 auto 6rem;
+      padding: 0 2rem;
+      columns: 3 280px;
+      column-gap: 1.5rem;
+    }
+
+    .gallery-item {
+      break-inside: avoid;
+      margin-bottom: 1.5rem;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--divider);
+      background: #151a22;
+      position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.5);
+      border-color: rgba(201,169,110,0.35);
+    }
+
+    /* Placeholder blocks — sized to simulate different ratios */
+    .gallery-placeholder {
+      width: 100%;
+      background: linear-gradient(135deg, #1a2030 0%, #111620 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gallery-placeholder::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 30% 40%, rgba(201,169,110,0.06) 0%, transparent 60%);
+    }
+
+    .gallery-placeholder-icon {
+      font-size: 2.5rem;
+      opacity: 0.2;
+      position: relative;
+    }
+
+    .gallery-caption {
+      padding: 1rem 1.25rem 1.1rem;
+    }
+
+    .gallery-caption h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #d0d8e0;
+      margin-bottom: 0.2rem;
+    }
+
+    .gallery-caption p {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+    }
+
+    /* ── PHOTO CTA ─────────────────────────────────── */
+    .gallery-cta {
+      text-align: center;
+      padding: 0 2rem 6rem;
+    }
+
+    .gallery-cta p {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+    }
+
+    .btn-gold {
+      display: inline-block;
+      padding: 0.85rem 2.5rem;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1rem;
+      background: linear-gradient(135deg, #c9a96e, #e8c98a);
+      color: #0a0e14;
+      transition: all 0.3s ease;
+    }
+
+    .btn-gold:hover {
+      box-shadow: 0 0 30px rgba(201,169,110,0.4);
+      transform: translateY(-3px);
+    }
+
+    /* ── FOOTER ────────────────────────────────────── */
+    .site-footer {
+      background: #0d1119;
+      border-top: 1px solid var(--divider);
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .site-footer .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+
+    .site-footer .logo span {
+      background: linear-gradient(135deg, #c9a96e, #e8c98a);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .footer-nav {
+      display: flex;
+      gap: 2.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 1rem 0 1.5rem;
+    }
+
+    .footer-nav a {
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      transition: color 0.2s;
+    }
+
+    .footer-nav a:hover { color: var(--gold-light); }
+    .footer-copy { font-size: 0.8rem; color: #3a4450; }
+
+    @media (max-width: 600px) {
+      .gallery-body { columns: 1; }
+    }
+  </style>
+</head>
+
+<body class="dark-theme">
+
+  <!-- HEADER -->
+  <header class="main-header">
+    <nav class="nav-container" aria-label="Site Navigation">
+      <a href="/" class="logo" aria-label="Miru Seafood Home">Miru<span>Seafood</span></a>
+      <ul class="nav-links" role="list">
+        <li><a href="../">Home</a></li>
+        <li><a href="../menu/">Menu</a></li>
+        <li><a href="../photo-gallery/" class="active" aria-current="page">Gallery</a></li>
+        <li><a href="../contact/">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="gallery-hero" aria-labelledby="gallery-heading">
+      <div>
+        <h1 id="gallery-heading">A Visual <em>Feast</em></h1>
+        <p>From the raw bar to the plate — every dish, crafted with intention.</p>
+      </div>
+    </section>
+
+    <p class="gallery-intro">
+      At Miru Seafood, every plate is composed with care. Browse our gallery below
+      to explore signature dishes, fresh catches, and the atmosphere of our League City dining room.
+      Add your own photos — drop images into the <code>/photo-gallery/images/</code> folder
+      and update the captions below.
+    </p>
+
+    <!-- GALLERY GRID -->
+    <section class="gallery-body" aria-label="Food and Restaurant Gallery">
+
+      <div class="gallery-item">
+        <div class="gallery-placeholder" style="height: 260px;">
+          <span class="gallery-placeholder-icon" aria-hidden="true">🦪</span>
+        </div>
+        <div class="gallery-caption">
+          <h3>Live Oysters</h3>
+          <p>Prince Edward Island — raw bar selection</p>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="gallery-placeholder" style="height: 320px;">
+          <span class="gallery-placeholder-icon" aria-hidden="true">🐟</span>
+        </div>
+        <div class="gallery-caption">
+          <h3>Tuna Crispy Rice</h3>
+          <p>Yellowfin tuna, eel sauce, yuzu tartar</p>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="gallery-placeholder" style="height: 200px;">
+          <span class="gallery-placeholder-icon" aria-hidden="true">🦞</span>
+        </div>
+        <div class="gallery-caption">
+          <h3>Lobster Cones</h3>
+          <p>Maine lobster, avocado, mango</p>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="gallery-placeholder" style="height: 280px;">
+          <span class="gallery-placeholder-icon" aria-hidden="true">🍣</span>
+        </div>
+        <div class="gallery-caption">
+          <h3>Wagyu Gyoza</h3>
+          <p>A5 short rib, shrimp</p>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="gallery-placeholder" style="height: 350px;">
+          <span class="gallery-placeholder-icon" aria-hidden="true">🐡</span>
+        </div>
+        <div class="gallery-caption">
+          <h3>Chilean Sea Bass</h3>
+          <p>Peppercorn chile, seafood noodles, blue crab</p>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="gallery-placeholder" style="height: 240px;">
+          <span class="gallery-placeholder-icon" aria-hidden="true">🍤</span>
+        </div>
+        <div class="gallery-caption">
+          <h3>Garlic Pepper Shrimp</h3>
+          <p>Lobster butter, crispy garlic, shishito</p>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="gallery-placeholder" style="height: 300px;">
+          <span class="gallery-placeholder-icon" aria-hidden="true">🫙</span>
+        </div>
+        <div class="gallery-caption">
+          <h3>Sake Mussels</h3>
+          <p>½ lb P.E.I., sake, garlic shallot, basil</p>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="gallery-placeholder" style="height: 220px;">
+          <span class="gallery-placeholder-icon" aria-hidden="true">🍛</span>
+        </div>
+        <div class="gallery-caption">
+          <h3>Seafood Pot</h3>
+          <p>Red curry, miso cod, clams, mussels, shrimp</p>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <div class="gallery-placeholder" style="height: 290px;">
+          <span class="gallery-placeholder-icon" aria-hidden="true">🐚</span>
+        </div>
+        <div class="gallery-caption">
+          <h3>Seared Hokkaido Scallops</h3>
+          <p>King mushroom, black garlic soy</p>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- CTA -->
+    <div class="gallery-cta">
+      <p>Ready to experience it in person?</p>
+      <a href="../menu/" class="btn-gold">View the Full Menu</a>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <a href="../" class="logo" aria-label="Miru Seafood">Miru<span>Seafood</span></a>
+    <nav class="footer-nav" aria-label="Footer Navigation">
+      <a href="../menu/">Menu</a>
+      <a href="../photo-gallery/">Gallery</a>
+      <a href="../contact/">Contact</a>
+    </nav>
+    <p class="footer-copy">&copy; 2026 Miru Seafood. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
