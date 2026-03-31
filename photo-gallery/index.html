@@ -26,7 +26,7 @@
 
     html { scroll-behavior: smooth; }
 
-    /* ── HERO ──────────────────────────────────────── */
+    /* â”€â”€ HERO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
     .gallery-hero {
       min-height: 38vh;
       display: flex;
@@ -51,7 +51,7 @@
     .gallery-hero h1 em { font-style: italic; color: var(--gold); }
     .gallery-hero p { font-size: 1.1rem; color: var(--text-secondary); }
 
-    /* ── GALLERY INTRO ─────────────────────────────── */
+    /* â”€â”€ GALLERY INTRO â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
     .gallery-intro {
       max-width: 680px;
       margin: 4rem auto 3rem;
@@ -62,7 +62,7 @@
       line-height: 1.8;
     }
 
-    /* ── MASONRY GRID ──────────────────────────────── */
+    /* â”€â”€ MASONRY GRID â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
     .gallery-body {
       max-width: 1100px;
       margin: 0 auto 6rem;
@@ -87,6 +87,8 @@
       box-shadow: 0 16px 48px rgba(0,0,0,0.5);
       border-color: rgba(201,169,110,0.35);
     }
+
+    .gallery-img { width: 100%; height: auto; display: block; object-fit: cover; border-radius: 4px; }
 
     /* Placeholder blocks — sized to simulate different ratios */
     .gallery-placeholder {
@@ -129,7 +131,7 @@
       color: var(--text-dim);
     }
 
-    /* ── PHOTO CTA ─────────────────────────────────── */
+    /* â”€â”€ PHOTO CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
     .gallery-cta {
       text-align: center;
       padding: 0 2rem 6rem;
@@ -157,7 +159,7 @@
       transform: translateY(-3px);
     }
 
-    /* ── FOOTER ────────────────────────────────────── */
+    /* â”€â”€ FOOTER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
     .site-footer {
       background: #0d1119;
       border-top: 1px solid var(--divider);
@@ -240,95 +242,109 @@
     <!-- GALLERY GRID -->
     <section class="gallery-body" aria-label="Food and Restaurant Gallery">
 
+            <div class="gallery-item">
+        <img src="../images/1005902843.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
       <div class="gallery-item">
-        <div class="gallery-placeholder" style="height: 260px;">
-          <span class="gallery-placeholder-icon" aria-hidden="true">🦪</span>
-        </div>
-        <div class="gallery-caption">
-          <h3>Live Oysters</h3>
-          <p>Prince Edward Island — raw bar selection</p>
-        </div>
+        <img src="../images/1006334256.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/1228254926.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/1373945707.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/1632680513.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/1669311918.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/2172414076.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/2198688033.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/2305665794.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/2543004212.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/259494993.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/2660140037.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/2994551.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/3143509845.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/3163083547.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/3329985479.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/3393629386.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/3673867090.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/3864238951.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/397166603.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/3979322276.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/4031854368.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/4052752047.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/4070872032.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/4174741807.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/4231499066.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/4238126407.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/511063132.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/538780914.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/722771717.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/736243251.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/774519311.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/853917079.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/891294595.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
       </div>
 
-      <div class="gallery-item">
-        <div class="gallery-placeholder" style="height: 320px;">
-          <span class="gallery-placeholder-icon" aria-hidden="true">🐟</span>
-        </div>
-        <div class="gallery-caption">
-          <h3>Tuna Crispy Rice</h3>
-          <p>Yellowfin tuna, eel sauce, yuzu tartar</p>
-        </div>
-      </div>
-
-      <div class="gallery-item">
-        <div class="gallery-placeholder" style="height: 200px;">
-          <span class="gallery-placeholder-icon" aria-hidden="true">🦞</span>
-        </div>
-        <div class="gallery-caption">
-          <h3>Lobster Cones</h3>
-          <p>Maine lobster, avocado, mango</p>
-        </div>
-      </div>
-
-      <div class="gallery-item">
-        <div class="gallery-placeholder" style="height: 280px;">
-          <span class="gallery-placeholder-icon" aria-hidden="true">🍣</span>
-        </div>
-        <div class="gallery-caption">
-          <h3>Wagyu Gyoza</h3>
-          <p>A5 short rib, shrimp</p>
-        </div>
-      </div>
-
-      <div class="gallery-item">
-        <div class="gallery-placeholder" style="height: 350px;">
-          <span class="gallery-placeholder-icon" aria-hidden="true">🐡</span>
-        </div>
-        <div class="gallery-caption">
-          <h3>Chilean Sea Bass</h3>
-          <p>Peppercorn chile, seafood noodles, blue crab</p>
-        </div>
-      </div>
-
-      <div class="gallery-item">
-        <div class="gallery-placeholder" style="height: 240px;">
-          <span class="gallery-placeholder-icon" aria-hidden="true">🍤</span>
-        </div>
-        <div class="gallery-caption">
-          <h3>Garlic Pepper Shrimp</h3>
-          <p>Lobster butter, crispy garlic, shishito</p>
-        </div>
-      </div>
-
-      <div class="gallery-item">
-        <div class="gallery-placeholder" style="height: 300px;">
-          <span class="gallery-placeholder-icon" aria-hidden="true">🫙</span>
-        </div>
-        <div class="gallery-caption">
-          <h3>Sake Mussels</h3>
-          <p>½ lb P.E.I., sake, garlic shallot, basil</p>
-        </div>
-      </div>
-
-      <div class="gallery-item">
-        <div class="gallery-placeholder" style="height: 220px;">
-          <span class="gallery-placeholder-icon" aria-hidden="true">🍛</span>
-        </div>
-        <div class="gallery-caption">
-          <h3>Seafood Pot</h3>
-          <p>Red curry, miso cod, clams, mussels, shrimp</p>
-        </div>
-      </div>
-
-      <div class="gallery-item">
-        <div class="gallery-placeholder" style="height: 290px;">
-          <span class="gallery-placeholder-icon" aria-hidden="true">🐚</span>
-        </div>
-        <div class="gallery-caption">
-          <h3>Seared Hokkaido Scallops</h3>
-          <p>King mushroom, black garlic soy</p>
-        </div>
-      </div>
 
     </section>
 
@@ -356,13 +372,48 @@
 
   <!-- FOOTER -->
   <footer class="site-footer" role="contentinfo">
-    <a href="../" class="logo" aria-label="Miru Seafood">Miru<span>Seafood</span></a>
-    <nav class="footer-nav" aria-label="Footer Navigation">
-      <a href="../menu/">Menu</a>
-      <a href="../photo-gallery/">Gallery</a>
-      <a href="../contact/">Contact</a>
-    </nav>
-    <p class="footer-copy">&copy; 2026 Miru Seafood. All rights reserved.</p>
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        <a href="../" class="logo-text" aria-label="Miru Seafood">Miru<span>Seafood</span></a>
+        <p>Premium coastal seafood &amp;<br>Japanese-inspired cuisine.<br>League City, TX.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Hours</h4>
+        <table class="footer-hours-table" aria-label="Restaurant Hours">
+          <tbody>
+            <tr><td>Mon â€“ Thu</td><td>4:00 â€“ 9:30 pm</td></tr>
+            <tr><td>Friday</td><td>4:00 â€“ 10:00 pm</td></tr>
+            <tr><td>Saturday</td><td>12:00 â€“ 10:00 pm</td></tr>
+            <tr><td>Sunday</td><td>12:00 â€“ 9:00 pm</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul class="footer-contact-list">
+          <li><strong>Address</strong><br>2490 Gulf Fwy S<br>League City, TX 77573</li>
+          <li><strong>Call</strong> <a href="tel:+18329057888">(832) 905-7888</a></li>
+          <li><strong>Text</strong> <a href="sms:+18329057878">(832) 905-7878</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul class="footer-nav-list">
+          <li><a href="../">Home</a></li>
+          <li><a href="../menu/">Menu</a></li>
+          <li><a href="../photo-gallery/">Gallery</a></li>
+          <li><a href="../contact/">Contact</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Miru Seafood &mdash; League City, TX. All rights reserved.
+    </div>
   </footer>
 
 </body>

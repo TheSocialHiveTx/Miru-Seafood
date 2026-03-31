@@ -26,6 +26,37 @@ body {
     font-family: var(--font-body);
     line-height: 1.6;
     overflow-x: hidden;
+    position: relative; /* For absolutely positioning pseudo-elements below */
+}
+
+/* Background Details */
+body::before, body::after {
+    content: '';
+    position: fixed;
+    z-index: -10;
+    pointer-events: none;
+    opacity: 0.18; /* Increased visibility per user request */
+    filter: invert(1); /* Makes dark images appear light against our dark theme */
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+body::before {
+    top: 15%; /* Moved down from top per user request */
+    left: -10%;
+    width: 500px;
+    height: 500px;
+    background-image: url('images/scallop-shrimp.png');
+    transform: rotate(15deg);
+}
+
+body::after {
+    bottom: -15%;
+    right: -10%;
+    width: 700px;
+    height: 700px;
+    background-image: url('images/detail1.png');
+    transform: rotate(-10deg);
 }
 
 
@@ -214,44 +245,160 @@ ul {
     font-size: 1.1rem;
 }
 
-/* Footer */
-.main-footer {
-    padding: 6rem 2rem 2rem;
-    background: var(--bg-card);
-    border-top: var(--border);
-    margin-top: 8rem;
+/* ── RICH SITE FOOTER ──────────────────────────────────── */
+.site-footer {
+    background: #0d1119;
+    border-top: 1px solid rgba(255,255,255,0.07);
+    padding: 4rem 2rem 0;
 }
 
-.footer-content {
-    max-width: 1200px;
+.footer-inner {
+    max-width: 1100px;
     margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 4rem;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr 0.8fr;
+    gap: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
 }
 
-.footer-info h3 {
+.footer-brand .logo-text {
     font-family: var(--font-heading);
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    background: var(--gradient);
+    font-size: 1.8rem;
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.footer-brand .logo-text span {
+    background: linear-gradient(135deg, #c9a96e, #e8c98a);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.footer-links ul {
+.footer-brand p {
+    font-size: 0.85rem;
+    color: #6b7685;
+    margin-top: 0.4rem;
+    line-height: 1.6;
+}
+
+.footer-col h4 {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: #c9a96e;
+    margin-bottom: 1.1rem;
+}
+
+.footer-hours-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.footer-hours-table td {
+    padding: 0.3rem 0;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    vertical-align: top;
+}
+
+.footer-hours-table td:first-child {
+    font-weight: 600;
+    color: #c8d0d8;
+    padding-right: 1rem;
+    white-space: nowrap;
+}
+
+.footer-contact-list {
+    list-style: none;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 2;
+}
+
+.footer-contact-list li strong {
+    color: #c8d0d8;
+    font-weight: 600;
+}
+
+.footer-contact-list a {
+    color: #c9a96e;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+}
+
+.footer-contact-list a:hover {
+    border-bottom-color: #c9a96e;
+}
+
+.footer-nav-list {
+    list-style: none;
     display: flex;
-    gap: 2rem;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+.footer-nav-list a {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #6b7685;
+    letter-spacing: 0.04em;
+    transition: color 0.2s;
+}
+
+.footer-nav-list a:hover {
+    color: #e8c98a;
 }
 
 .footer-bottom {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1.5rem 0;
+    text-align: center;
+    font-size: 0.78rem;
+    color: #3a4450;
+}
+
+/* Decorative Split section */
+.decorative-split {
+    padding: 3rem 2rem 5rem;
     max-width: 1200px;
     margin: 0 auto;
-    padding-top: 2rem;
-    border-top: var(--border);
+}
+
+.deco-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.deco-img-box {
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    line-height: 0;
+}
+
+.deco-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.deco-img-box:hover .deco-img {
+    transform: scale(1.05);
+}
+
+.deco-text {
     text-align: center;
-    color: var(--text-secondary);
+    padding: 0 1rem;
 }
 
 /* Map Embed */
@@ -273,5 +420,17 @@ ul {
     }
     .nav-links {
         display: none; /* Mobile menu needed */
+    }
+    .footer-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+    .footer-hours-table {
+        margin: 0 auto;
+    }
+    .deco-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
 }

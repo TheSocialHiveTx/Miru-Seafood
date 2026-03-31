@@ -1,0 +1,103 @@
+﻿      <div class="gallery-item">
+        <img src="../images/1005902843.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/1006334256.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/1228254926.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/1373945707.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/1632680513.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/1669311918.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/2172414076.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/2198688033.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/2305665794.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/2543004212.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/259494993.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/2660140037.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/2994551.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/3143509845.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/3163083547.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/3329985479.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/3393629386.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/3673867090.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/3864238951.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/397166603.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/3979322276.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/4031854368.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/4052752047.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/4070872032.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/4174741807.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/4231499066.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/4238126407.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/511063132.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/538780914.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/722771717.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/736243251.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/774519311.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/853917079.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="../images/891294595.jpg" alt="Miru Seafood Dish" class="gallery-img" loading="lazy">
+      </div>
+
